@@ -1,0 +1,29 @@
+#+title: DataWrapper README
+#+author: Aimee Johnston
+#+date: 2021-07-21
+
+* Why did I write this package?
+I got tired of my python scripts looking messy and repetitive. This package wraps a lot of data wrangling and machine learning modeling objects and functions into operations that I commonly use to clean, visualize, and model data.
+
+For example, when I am importing data, I usually use ~pandas~ and have specific naming conventions for the columns (no spaces, CamelCase). I want to import the data and fix the names in one line; so I call ~importDFProperly~, which calls ~importCSVasDF~, ~makeCamelCase~, and ~removeWhiteSpace~ on the dataframe and the dataframe's columns. I try to keep function names in mixedCase.
+
+* What parts are there?
+There are 3 main modules to DataWrapper: ~cleaning~, ~graphing~, and ~modeling~.
+** cleaning.py
+This is where the code that handles data wrangling lives; there are functions for filling NAs, functions for filtering numerical values based on IQR, and more. There are more functions being added with every new project I take on and need a new tool to use.
+CURRENTLY REQUIRES:
+*** ~pandas~
+*** ~numpy~
+*** ~scipy.stats~
+*** ~functools~
+** graphing.py
+This is the module that I currently have the most trouble with; I want plotting code to be short and sweet, but the number of parameters needed for each graph generated is a lot.
+CURRENTLY REQUIRES:
+*** ~matplotlib.pyplot~
+*** ~seaborn~
+** modeling.py
+This module holds lots of ~sklearn~ wrappers because Pipelines have a lot of repetitive code, and I like my print statements to be called from somewhere other than my functioning script.
+CURRENTLY REQUIRES:
+*** ~scikitlearn~
+*** ~pandas~
+*** ~numpy~
